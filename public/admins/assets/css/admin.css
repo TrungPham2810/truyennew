@@ -1,0 +1,25 @@
+.logo {
+    width: 100%;
+}
+
+.icon_logo {
+    width: 60%;
+}
+.nav-sm .icon_logo {
+    display: inline;
+}
+.nav-sm .logo {
+    display: none;
+}
+
+.nav-md .icon_logo {
+    display: none;
+}
+.nav-md .logo {
+    display: block;
+}
+
+a.site_title {
+    text-align: center;
+    padding: 0;
+}
