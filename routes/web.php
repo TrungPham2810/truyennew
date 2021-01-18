@@ -13,14 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
+Route::get('/the-loai/{type}', [
+        'as'=> 'type.story',
+        'uses' =>'CategoryController@show'
+    ]
+);
 Route::get('/test', function () {
     return view('test');
 })->name('test');
