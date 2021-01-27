@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Auth::routes();
-
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/the-loai/{type}', [

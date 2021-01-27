@@ -8,8 +8,6 @@
         <div class="row" style="display: inline-block;">
             <h1>Truyen New</h1>
         </div>
-
-
     </div>
 @endsection
 

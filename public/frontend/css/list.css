@@ -73,14 +73,156 @@ ul.menu.breadcrumb {
 #search-form button:hover {
     background: #f9b349;
 }
+
+.switch-layout {
+    float: right;
+    border: 1px solid;
+    border-radius: 4px;
+    display: flex;
+    margin: 15px;
+}
+
+.switch-layout div {
+    padding: 7px;
+
+}
+.switch-layout .grid {
+    background: #fff;
+    border-radius: 4px 0 0 4px;
+}
+
+.switch-layout .list {
+    background: #fff;
+    border-radius: 0 4px 4px 0 ;
+}
+.switch-layout .active {
+    background: #f9b349;
+
+}
+.description-category {
+    font-weight: 400;
+    color: #888;
+    font-size: 15px;
+}
+
+.type_list td.chap {
+    vertical-align: initial;
+}
+
+.type_list td.chap a{
+    font-size: 14px;
+    line-height: 1.7;
+    color: #f9b349;
+    display: none;
+    white-space: nowrap;
+}
+.type_list td.info {
+    vertical-align: baseline;
+    padding: 5px;
+}
+.chap_mobile {
+    padding: 5px;
+    border: 1px solid #f9b349;
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.chap_mobile a {
+    font-size: 14px;
+    color: #f9b349;
+}
+
+
+h3.rv-home-a-title a {
+    font-size: 16px;
+    color: #000;
+    transition: all .3s;
+}
+
+h3.rv-home-a-title a:hover {
+    color: #f9b349;
+
+}
+.book-status {
+    display: none;
+}
 @media (min-width: 558px){
     ul.menu.breadcrumb, .section-breadcrumb li:first-child:after {
         font-size: 18px;
     }
 }
+.rv-sr-a, .genre {
+    color: #f9b349;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+tbody {
+    width: 100%;
+}
+img.image-book {
+    width: 100%;
+}
+table {
+    width: 100%;
+}
+img.image-book {
+    width: 100%;
+}
+.type_list tr {
+    padding: 10px 0;
+    display: block;
+    border-bottom: 1px dotted #888;
+}
+.type_list .meta {
+    display: flex;
+}
+/*css for type grid*/
+.type_grid tr {
+    display: flex;
+    flex-flow: column;
+    width: 31%;
+    float: left;
+    padding: 1%;
+}
+.type_grid .chap_mobile {
+    display: none;
+}
 
+.type_grid .meta .view {
+    display: none;
+}
+
+.type_grid .book-status, .type_grid .chap, .type_grid .tab-type, .type_grid .author {
+    display: none;
+
+}
+
+@media (max-width: 544px){
+    .type_grid h3.rv-home-a-title a {
+        font-size: 13px;
+    }
+}
 @media (min-width: 768px){
     #search-form button {
         width: 30%;
+    }
+    .description-category {
+        font-size: 17px;
+    }
+
+    .type_list td.chap a{
+        display: block;
+    }
+
+    .book-status {
+        display: block;
+    }
+    .chap_mobile {
+        display: none;
+    }
+
+    .type_grid tr {
+        width: 23%;
     }
 }

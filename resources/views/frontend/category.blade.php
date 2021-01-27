@@ -91,7 +91,7 @@
             </div>
         </div>
     </section>
-    <section class="section-show-book">
+    <section class="section-show-book type_list">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-lg-9">
@@ -102,19 +102,247 @@
                         </div>
                         <div class="col-xs-6">
                             <div class="switch-layout">
-                                <div class="grid"><a href="#"></a></div>
-                                <div class="list active-list"><a href="#"></a></div>
-                            </div>
-                        </div>
+                                <div class="grid"><i class="fas fa-th"></i></div>
+                                <div class="list active"><i class="fas fa-list"></i></div>
 
-                        <div class="col-xs-12">
-                            <div class="description-category">
-                                <p>Truyện thường xoay quanh cuộc đời của nhân vật chính, quá trình rèn luyện, trưởng thành, tìm kiếm, học tập các bí kíp võ công, cùng những cuộc phiêu lưu, truy đuổi, chém giết... đầy nguy hiểm và cơ hội trong giới võ lâm giang hồ.</p>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="description-category">
+                                <p>Truyện thường xoay quanh cuộc đời của nhân vật chính, quá trình rèn luyện, trưởng
+                                    thành, tìm kiếm, học tập các bí kíp võ công, cùng những cuộc phiêu lưu, truy đuổi,
+                                    chém giết... đầy nguy hiểm và cơ hội trong giới võ lâm giang hồ.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-list pc">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="image ">
+                                    <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">
+                                        <img class="image-book" src="{{asset('images/test_image_story.png')}}" alt="Bí Ẩn Đôi Long Phượng">
+                                    </a>
+                                </td>
+                                <td class="info">
+                                    <div class="chap_mobile">
+                                        <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                            C93
+                                        </a>
+                                    </div>
+                                    <h3 class="rv-home-a-title">
+                                        <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">Bí Ẩn Đôi Long Phượng</a>
+                                    </h3>
+                                    <div class="meta">
+                                        <div class="rate">6.8/10</div>
+                                        <div class="view">11125</div>
+                                    </div>
+                                    <p class="book-status">Trạng thái: Đang ra</p>
+                                    <p class="author">Tác giả:
+                                        <a itemprop="author" class="rv-sr-a" href="/tac-gia/kieu-gia-tieu-kieu/" title=" Kiều Gia Tiểu Kiều">
+                                            Kiều Gia Tiểu Kiều
+                                        </a>
+                                    </p>
+                                    <p class="tab-type">Thể loại:
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/ngon-tinh/" title="Ngôn Tình">
+                                            Ngôn Tình
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/co-dai/" title="Cổ Đại">
+                                            Cổ Đại
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/quan-truong/" title="Quan Trường">
+                                            Quan Trường
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/trinh-tham/" title="Trinh Thám">
+                                            Trinh Thám
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/truyen-sung/" title="Truyện Sủng">
+                                            Truyện Sủng
+                                        </a>
+                                    </p>
+                                </td>
+                                <td class="chap">
+                                    <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                        Chương 93
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="image ">
+                                    <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">
+                                        <img class="image-book" src="{{asset('images/test_image_story.png')}}" alt="Bí Ẩn Đôi Long Phượng">
+                                    </a>
+                                </td>
+                                <td class="info">
+                                    <div class="chap_mobile">
+                                        <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                            C93
+                                        </a>
+                                    </div>
+                                    <h3 class="rv-home-a-title">
+                                        <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">Bí Ẩn Đôi Long Phượng</a>
+                                    </h3>
+                                    <div class="meta">
+                                        <div class="rate">6.8/10</div>
+                                        <div class="view">11125</div>
+                                    </div>
+                                    <p class="book-status">Trạng thái: Đang ra</p>
+                                    <p class="author">Tác giả:
+                                        <a itemprop="author" class="rv-sr-a" href="/tac-gia/kieu-gia-tieu-kieu/" title=" Kiều Gia Tiểu Kiều">
+                                            Kiều Gia Tiểu Kiều
+                                        </a>
+                                    </p>
+                                    <p class="tab-type">Thể loại:
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/ngon-tinh/" title="Ngôn Tình">
+                                            Ngôn Tình
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/co-dai/" title="Cổ Đại">
+                                            Cổ Đại
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/quan-truong/" title="Quan Trường">
+                                            Quan Trường
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/trinh-tham/" title="Trinh Thám">
+                                            Trinh Thám
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/truyen-sung/" title="Truyện Sủng">
+                                            Truyện Sủng
+                                        </a>
+                                    </p>
+                                </td>
+                                <td class="chap">
+                                    <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                        Chương 93
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="image ">
+                                    <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">
+                                        <img class="image-book" src="{{asset('images/test_image_story.png')}}" alt="Bí Ẩn Đôi Long Phượng">
+                                    </a>
+                                </td>
+                                <td class="info">
+                                    <div class="chap_mobile">
+                                        <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                            C93
+                                        </a>
+                                    </div>
+                                    <h3 class="rv-home-a-title">
+                                        <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">Bí Ẩn Đôi Long Phượng</a>
+                                    </h3>
+                                    <div class="meta">
+                                        <div class="rate">6.8/10</div>
+                                        <div class="view">11125</div>
+                                    </div>
+                                    <p class="book-status">Trạng thái: Đang ra</p>
+                                    <p class="author">Tác giả:
+                                        <a itemprop="author" class="rv-sr-a" href="/tac-gia/kieu-gia-tieu-kieu/" title=" Kiều Gia Tiểu Kiều">
+                                            Kiều Gia Tiểu Kiều
+                                        </a>
+                                    </p>
+                                    <p class="tab-type">Thể loại:
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/ngon-tinh/" title="Ngôn Tình">
+                                            Ngôn Tình
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/co-dai/" title="Cổ Đại">
+                                            Cổ Đại
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/quan-truong/" title="Quan Trường">
+                                            Quan Trường
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/trinh-tham/" title="Trinh Thám">
+                                            Trinh Thám
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/truyen-sung/" title="Truyện Sủng">
+                                            Truyện Sủng
+                                        </a>
+                                    </p>
+                                </td>
+                                <td class="chap">
+                                    <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                        Chương 93
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="image ">
+                                    <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">
+                                        <img class="image-book" src="{{asset('images/test_image_story.png')}}" alt="Bí Ẩn Đôi Long Phượng">
+                                    </a>
+                                </td>
+                                <td class="info">
+                                    <div class="chap_mobile">
+                                        <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                            C93
+                                        </a>
+                                    </div>
+                                    <h3 class="rv-home-a-title">
+                                        <a href="/bi-an-doi-long-phuong/" title="Bí Ẩn Đôi Long Phượng">Bí Ẩn Đôi Long Phượng</a>
+                                    </h3>
+                                    <div class="meta">
+                                        <div class="rate">6.8/10</div>
+                                        <div class="view">11125</div>
+                                    </div>
+                                    <p class="book-status">Trạng thái: Đang ra</p>
+                                    <p class="author">Tác giả:
+                                        <a itemprop="author" class="rv-sr-a" href="/tac-gia/kieu-gia-tieu-kieu/" title=" Kiều Gia Tiểu Kiều">
+                                            Kiều Gia Tiểu Kiều
+                                        </a>
+                                    </p>
+                                    <p class="tab-type">Thể loại:
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/ngon-tinh/" title="Ngôn Tình">
+                                            Ngôn Tình
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/co-dai/" title="Cổ Đại">
+                                            Cổ Đại
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/quan-truong/" title="Quan Trường">
+                                            Quan Trường
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/trinh-tham/" title="Trinh Thám">
+                                            Trinh Thám
+                                        </a>,
+                                        <a itemprop="genre" class="rv-sr-a" href="/the-loai/truyen-sung/" title="Truyện Sủng">
+                                            Truyện Sủng
+                                        </a>
+                                    </p>
+                                </td>
+                                <td class="chap">
+                                    <a href="/bi-an-doi-long-phuong/chuong-93/" title="Bí Ẩn Đôi Long Phượng Chương 93">
+                                        Chương 93
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-3">
 
-                    
+                    <div class="book-category">
+                        <div class="title_hot">
+                            <span>Thể loại truyện</span>
+                        </div>
+                        <div class="list_type">
+                            <ul>
+                                <li><a href="/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a></li>
+                                <li><a href="/the-loai/kiem-hiep/" title="Kiếm Hiệp">Kiếm Hiệp</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="/the-loai/truyen-sung/" title="Truyện Sủng">Truyện Sủng</a></li>
+                                <li><a href="/the-loai/cung-dau/" title="Truyện Cung Đấu">Truyện Cung Đấu</a></li>
+                                <li><a href="/the-loai/truyen-nu-cuong/" title="Truyện Nữ Cường">Truyện Nữ Cường</a>
+                                </li>
+                                <li><a href="/the-loai/truyen-gia-dau/" title="Truyện Gia Đấu">Truyện Gia Đấu</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
                 </div>
             </div>
         </div>
