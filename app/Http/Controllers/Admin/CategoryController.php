@@ -96,8 +96,8 @@ class CategoryController extends Controller
     {
         if ($id) {
             try {
-                $product = $this->category->find($id);
-                $product->delete();
+                $category = $this->category->find($id);
+                $category->delete();
                 $message = 'Delete category success.';
                 return response()->json([
                     'code' => 200,

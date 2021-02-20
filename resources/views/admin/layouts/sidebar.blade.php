@@ -28,7 +28,7 @@
             <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fas fa-home"></i> Catalog <span class="fa fa-chevron-down"></span></a>
+                    <li><a><i class="fas fa-home"></i> Catalog <span class="fas fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{route('admin.categories.index')}}">Categories</a></li>
                             <li><a href="{{route('admin.tags.index')}}">Danh sách</a></li>
@@ -38,7 +38,7 @@
                         <a href="{{route('admin.books.index')}}"><i class="fas fa-table"></i> Danh Sách Truyện </a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-edit"></i> Chap Truyện</a>
+                        <a href="{{route('admin.chapter.index')}}"><i class="fas fa-edit"></i> Chap Truyện</a>
                     </li>
 
                     <li>
@@ -48,23 +48,16 @@
                     <li>
                         <a href="{{route('admin.translator.index')}}"><i class="fas fa-language"></i>Translator</a>
                     </li>
-                    <li><a><i class="fas fa-desktop"></i>Human<span class="fas fa-chevron-down"></span></a>
+                    <li><a><i class="fas fa-desktop"></i>Web<span class="fas fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="general_elements.html">General Elements</a></li>
-                            <li><a href="media_gallery.html">Media Gallery</a></li>
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="icons.html">Icons</a></li>
-                            <li><a href="glyphicons.html">Glyphicons</a></li>
-                            <li><a href="widgets.html">Widgets</a></li>
-                            <li><a href="invoice.html">Invoice</a></li>
-                            <li><a href="inbox.html">Inbox</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="general_elements.html">Configuration</a></li>
                         </ul>
                     </li>
-                    <li><a><i class="fas fa-clone"></i>Layouts <span class="fas fa-chevron-down"></span></a>
+                    <li><a><i class="fas fa-clone"></i>Permissions<span class="fas fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                            <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                            <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                            <li><a href="{{route('admin.user.index')}}">All Users</a></li>
+                            <li><a href="{{route('admin.role.index')}}">Roles</a></li>
+                            <li><a href="{{route('admin.rule.index')}}">Rules</a></li>
                         </ul>
                     </li>
                 </ul>

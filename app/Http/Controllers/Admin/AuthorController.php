@@ -73,8 +73,8 @@ class AuthorController extends Controller
     {
         if ($id) {
             try {
-                $product = $this->author->find($id);
-                $product->delete();
+                $author = $this->author->find($id);
+                $author->delete();
                 $message = 'Delete author success.';
                 return response()->json([
                     'code' => 200,

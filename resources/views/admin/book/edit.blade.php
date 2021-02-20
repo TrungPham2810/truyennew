@@ -14,7 +14,13 @@
             @if(session('message'))
                 <div class="alert alert-danger">{{session('message')}}</div>
             @endif
-
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 p-2">
+                            <a href="{{route('admin.books.createchapter', ['id'=> $book->id])}}" class="btn btn-primary float-right">Add New Chapter</a>
+                        </div>
+                    </div>
+                </div>
                 <form method="POST" action="{{ route('admin.books.update',['id'=>$book->id]) }}" enctype="multipart/form-data">
                     @csrf
                     <div class="container-fluid">
@@ -31,7 +37,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Url Key</label>
+                                    <label for="exampleInputEmail1">Url Key (don't have space, special charactor, capitalize letter.)</label>
                                     <input type="text" pattern="[a-z0-9_\-^]+" class="form-control @error('url_key') is-invalid @enderror"
                                            value="{{$book->url_key}}" required name="url_key" id="" placeholder="url key">
                                     @error('url_key')

@@ -17,10 +17,8 @@ class CreateTagBooksTable extends Migration
             $table->id();
             $table->bigInteger('tag_id')->unsigned()->index();
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
-
             $table->bigInteger('book_id')->unsigned()->index();
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
-
             $table->timestamps();
         });
     }

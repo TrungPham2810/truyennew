@@ -71,8 +71,8 @@ class TagController extends Controller
     {
         if ($id) {
             try {
-                $product = $this->tag->find($id);
-                $product->delete();
+                $tag = $this->tag->find($id);
+                $tag->delete();
                 $message = 'Delete tag success.';
                 return response()->json([
                     'code' => 200,

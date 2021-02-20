@@ -1,5 +1,5 @@
 $(function () {
-    $('.delete_category, .delete_tag, .delete_author, .delete_book, .delete_translator').click(function () {
+    $('.delete_category, .delete_tag, .delete_author, .delete_book, .delete_translator, .delete_chapter, .delete_rule, .delete_role, .delete_user').click(function () {
         var url = $(this).data('url');
         var element = $(this);
         Swal.fire({

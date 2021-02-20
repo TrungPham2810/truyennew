@@ -71,8 +71,8 @@ class TranslatorController extends Controller
     {
         if ($id) {
             try {
-                $product = $this->translator->find($id);
-                $product->delete();
+                $translator = $this->translator->find($id);
+                $translator->delete();
                 $message = 'Delete translator success.';
                 return response()->json([
                     'code' => 200,

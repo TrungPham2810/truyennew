@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Url Key</label>
+                                <label for="exampleInputEmail1">Url Key (don't have space, special charactor, capitalize letter.)</label>
                                 <input type="text" pattern="[a-z0-9_\-^]+" class="form-control @error('url_key') is-invalid @enderror"
                                        value="{{old('url_key')}}" required name="url_key" id="" placeholder="url key">
                                 @error('url_key')

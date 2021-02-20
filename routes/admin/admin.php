@@ -134,6 +134,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
                 'uses' =>'Admin\BookController@create'
             ]
         );
+        Route::get('/createchapter/{id}', [
+                'as'=> 'admin.books.createchapter',
+                'uses' =>'Admin\BookController@createChapter'
+            ]
+        );
         Route::post('/store', [
                 'as'=> 'admin.books.store',
                 'uses' =>'Admin\BookController@store'
@@ -157,36 +162,36 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
         );
     });
 
-    Route::group(['prefix' => 'chap'], function () {
+    Route::group(['prefix' => 'chapter'], function () {
         Route::get('/', [
-                'as'=> 'admin.chap.index',
-                'uses' =>'Admin\ChapController@index',
+                'as'=> 'admin.chapter.index',
+                'uses' =>'Admin\ChapterController@index',
             ]
         );
         Route::get('/create', [
-                'as'=> 'admin.chap.create',
-                'uses' =>'Admin\ChapController@create'
+                'as'=> 'admin.chapter.create',
+                'uses' =>'Admin\ChapterController@create'
             ]
         );
         Route::post('/store', [
-                'as'=> 'admin.chap.store',
-                'uses' =>'Admin\ChapController@store'
+                'as'=> 'admin.chapter.store',
+                'uses' =>'Admin\ChapterController@store'
             ]
         );
         Route::get('/edit/{id}', [
-                'as'=> 'admin.chap.edit',
-                'uses' =>'Admin\ChapController@edit'
+                'as'=> 'admin.chapter.edit',
+                'uses' =>'Admin\ChapterController@edit'
             ]
         );
         Route::post('/update/{id}', [
-                'as'=> 'admin.chap.update',
-                'uses' =>'Admin\ChapController@update'
+                'as'=> 'admin.chapter.update',
+                'uses' =>'Admin\ChapterController@update'
             ]
         );
 
         Route::get('/delete/{id}', [
-                'as'=> 'admin.chap.delete',
-                'uses' =>'Admin\ChapController@delete'
+                'as'=> 'admin.chapter.delete',
+                'uses' =>'Admin\ChapterController@delete'
             ]
         );
     });
@@ -224,4 +229,140 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
             ]
         );
     });
+      Route::group(['prefix' => 'translator'], function () {
+        Route::get('/', [
+                'as'=> 'admin.translator.index',
+                'uses' =>'Admin\TranslatorController@index',
+            ]
+        );
+        Route::get('/create', [
+                'as'=> 'admin.translator.create',
+                'uses' =>'Admin\TranslatorController@create'
+            ]
+        );
+        Route::post('/store', [
+                'as'=> 'admin.translator.store',
+                'uses' =>'Admin\TranslatorController@store'
+            ]
+        );
+        Route::get('/edit/{id}', [
+                'as'=> 'admin.translator.edit',
+                'uses' =>'Admin\TranslatorController@edit'
+            ]
+        );
+        Route::post('/update/{id}', [
+                'as'=> 'admin.translator.update',
+                'uses' =>'Admin\TranslatorController@update'
+            ]
+        );
+
+        Route::get('/delete/{id}', [
+                'as'=> 'admin.translator.delete',
+                'uses' =>'Admin\TranslatorController@delete'
+            ]
+        );
+    });
+    Route::group(['prefix' => 'user'], function () {
+        Route::get('/', [
+                'as'=> 'admin.user.index',
+                'uses' =>'Admin\UserController@index'
+            ]
+        );
+        Route::get('/create', [
+                'as'=> 'admin.user.create',
+                'uses' =>'Admin\UserController@create'
+            ]
+        );
+        Route::post('/store', [
+                'as'=> 'admin.user.store',
+                'uses' =>'Admin\UserController@store'
+            ]
+        );
+        Route::get('/edit/{id}', [
+                'as'=> 'admin.user.edit',
+                'uses' =>'Admin\UserController@edit'
+            ]
+        );
+        Route::post('/update/{id}', [
+                'as'=> 'admin.user.update',
+                'uses' =>'Admin\UserController@update'
+            ]
+        );
+
+        Route::get('/delete/{id}', [
+                'as'=> 'admin.user.delete',
+                'uses' =>'Admin\UserController@delete'
+            ]
+        );
+    });
+
+    Route::group(['prefix' => 'rule'], function () {
+        Route::get('/', [
+                'as'=> 'admin.rule.index',
+                'uses' =>'Admin\RuleController@index'
+            ]
+        );
+        Route::get('/create', [
+                'as'=> 'admin.rule.create',
+                'uses' =>'Admin\RuleController@create'
+            ]
+        );
+        Route::post('/store', [
+                'as'=> 'admin.rule.store',
+                'uses' =>'Admin\RuleController@store'
+            ]
+        );
+        Route::get('/edit/{id}', [
+                'as'=> 'admin.rule.edit',
+                'uses' =>'Admin\RuleController@edit'
+            ]
+        );
+        Route::post('/update/{id}', [
+                'as'=> 'admin.rule.update',
+                'uses' =>'Admin\RuleController@update'
+            ]
+        );
+
+        Route::get('/delete/{id}', [
+                'as'=> 'admin.rule.delete',
+                'uses' =>'Admin\RuleController@delete'
+            ]
+        );
+    });
+
+    Route::group(['prefix' => 'role'], function () {
+        Route::get('/', [
+                'as'=> 'admin.role.index',
+                'uses' =>'Admin\RoleController@index'
+            ]
+        );
+        Route::get('/create', [
+                'as'=> 'admin.role.create',
+                'uses' =>'Admin\RoleController@create'
+            ]
+        );
+        Route::post('/store', [
+                'as'=> 'admin.role.store',
+                'uses' =>'Admin\RoleController@store'
+            ]
+        );
+        Route::get('/edit/{id}', [
+                'as'=> 'admin.role.edit',
+                'uses' =>'Admin\RoleController@edit'
+            ]
+        );
+        Route::post('/update/{id}', [
+                'as'=> 'admin.role.update',
+                'uses' =>'Admin\RoleController@update'
+            ]
+        );
+
+        Route::get('/delete/{id}', [
+                'as'=> 'admin.role.delete',
+                'uses' =>'Admin\RoleController@delete'
+            ]
+        );
+    });
+
+
 });

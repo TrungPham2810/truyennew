@@ -7,6 +7,7 @@ use App\Book;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\BookRequest;
 use App\Tag;
+use App\Translator;
 use Illuminate\Http\Request;
 use App\Components\Recusive;
 use Illuminate\Support\Facades\Log;
@@ -20,17 +21,20 @@ class BookController extends Controller
     protected $recusive;
     protected $tag;
     protected $author;
+    protected $translator;
 
     public function __construct(
         Book $book,
         Recusive $recusive,
         Tag $tag,
-        Author $author
+        Author $author,
+        Translator $translator
     ) {
         $this->book = $book;
         $this->recusive = $recusive;
         $this->tag = $tag;
         $this->author = $author;
+        $this->translator = $translator;
     }
 
     public function handleCategorySelect($id = 0, $currentCategory = 0)
@@ -51,6 +55,19 @@ class BookController extends Controller
         $authors = $this->author->all();
         $htmlSelect = $this->handleCategorySelect();
         return view('admin.book.add', compact('htmlSelect', 'tags', 'authors'));
+    }
+
+    public function createChapter($id)
+    {
+        $book = $this->book->find($id);
+        $bookId = $book->id;
+        $translators = $this->translator->all();
+        if ($bookId) {
+            return view('admin.chapter.add', compact('book', 'translators'));
+        } else {
+            $message = "Can't found book to add new chap.";
+            return redirect()->route('admin.chapter.create')->with('message', $message);
+        }
     }
 
     public function store(BookRequest $request)
@@ -141,8 +158,8 @@ class BookController extends Controller
     {
         if ($id) {
             try {
-                $product = $this->book->find($id);
-                $product->delete();
+                $book = $this->book->find($id);
+                $book->delete();
                 $message = 'Delete book success.';
                 return response()->json([
                     'code' => 200,
