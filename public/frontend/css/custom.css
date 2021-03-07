@@ -20,6 +20,7 @@ ul {
     padding-left: .9375rem;
     padding-right: .9375rem;
 }
+
 .col-xs-4 {
     width: 33.33333%;
     float: left;
@@ -149,13 +150,111 @@ input.ip-search.ui-autocomplete-input:focus {
     background: white;
 }
 
+/*css page in listing*/
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.page-link:focus {
+    z-index: 2;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #fff;
+    border-color: #dee2e6;
+}
+
+.pagination-lg .page-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+.pagination-lg .page-item:first-child .page-link {
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+
+.pagination-lg .page-item:last-child .page-link {
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.pagination-sm .page-link {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.pagination-sm .page-item:first-child .page-link {
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+.pagination-sm .page-item:last-child .page-link {
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+}
+
 ul.sub-menu li {
     text-align: left;
     padding: 5px 15px;
-    border-top: 1px solid #f0f0f0;
+    /*border-bottom: 1px solid #b2b2b2;*/
     white-space: nowrap;
 }
-
+ul.sub-menu li a {
+    border-bottom: 1px solid #f9b349;
+    width: 100%;
+    display: block;
+    color: #000;
+    padding: 4px 0;
+}
 ul.sub-menu.sub-menu-cat {
 
 }
@@ -215,13 +314,14 @@ ul.sub-menu.sub-menu-cat {
 }
 .feature_type .sub-menu {
     /*display: none;*/
+    width: 500px !important;
     opacity: 0;
     transition: all 0.5s;
     position: absolute;
     top: 15px;
-    padding: 0;
+    padding: 20px 0;
     left: -11px;
-    width: 100%;
+    /*width: 100%;*/
     list-style-type: none;
     visibility:hidden;
 }
@@ -236,28 +336,21 @@ ul.sub-menu.sub-menu-cat {
 .feature_type .story-menu-item {
     padding: 5px 25px;
     font-weight: 100;
-    font-size: 17px;
+    font-size: 16px;
     position: relative;
 }
 
 .feature_type .story-menu-item .far.fa-file, .feature_type .story-menu-item .fas.fa-atlas {
     color: #f9b349;
 }
-.feature_type .cat:hover > .sub-menu-cat{
+.feature_type .cat:hover > .sub-menu-cat, .feature_type .list:hover > .sub-menu-list{
     display: block;
-    background: rgb(240 240 240);
+    background: rgb(241 229 213);
     left: 15px;
     opacity: 1;
     visibility:visible;
 }
 
-.feature_type .list:hover > .sub-menu-list{
-    display: block;
-    background: rgb(240 240 240);
-    left: 15px;
-    opacity: 1;
-    visibility:visible;
-}
 .feature_type .sub-menu {
     width: auto;
 }
@@ -458,6 +551,19 @@ img.image-book.ls-is-cached.lazyloaded {
     line-height: 1.6;
 }
 
+.list-chapter {
+    margin: 20px 0;
+}
+
+.list-chapter a.chapter {
+    /* padding: 5px 0; */
+    display: block;
+    font-size: 16px;
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 8px 0;
+}
+
 @media (min-width: 544px){
 
     .container {
@@ -519,6 +625,21 @@ img.image-book.ls-is-cached.lazyloaded {
     }
     .col-lg-3 {
         width: 25%;
+        float: left;
+    }
+
+    .col-lg-4 {
+        width: 33.33333%;
+        float: left;
+    }
+
+    .col-lg-6 {
+        width: 50%;
+        float: left;
+    }
+
+    .col-lg-8 {
+        width: 66.667%;
         float: left;
     }
     .col-lg-9 {

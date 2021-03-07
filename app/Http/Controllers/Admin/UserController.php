@@ -113,17 +113,19 @@ class UserController extends Controller
         return redirect()->route('admin.user.edit', ['id'=>$id])->with('message', $message);
     }
 
-    public function delete($id)
+    public function delete($id, User $user)
     {
         if($id) {
             try {
-                $user = $this->user->find($id);
-                $user->delete();
-                $message = 'Delete user success.';
-                return response()->json([
-                    'code' =>200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $user)) {
+                    $user = $this->user->find($id);
+                    $user->delete();
+                    $message = 'Delete user success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: '.$e->getMessage();
                 return response()->json([

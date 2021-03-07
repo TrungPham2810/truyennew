@@ -69,17 +69,19 @@ class AuthorController extends Controller
         return redirect()->route('admin.author.index')->with('message', $message);
     }
 
-    public function delete($id)
+    public function delete($id, Author $author)
     {
         if ($id) {
             try {
-                $author = $this->author->find($id);
-                $author->delete();
-                $message = 'Delete author success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $author)) {
+                    $author = $this->author->find($id);
+                    $author->delete();
+                    $message = 'Delete author success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([

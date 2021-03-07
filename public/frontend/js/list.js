@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    console.log( "list.js" );
     var sectionShowBook = $('.section-show-book');
     $('.switch-layout .grid').click(function () {
         if(!$(this).hasClass('active')) {

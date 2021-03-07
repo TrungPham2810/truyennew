@@ -1,5 +1,4 @@
 $( document ).ready(function() {
-    console.log( "ready!" );
     var menuCat = $('.feature_mobile .story-menu-item.cat');
     var itemCat = $('.feature_mobile .sub-menu.sub-menu-cat');
     var menuList = $('.feature_mobile .story-menu-item.list');

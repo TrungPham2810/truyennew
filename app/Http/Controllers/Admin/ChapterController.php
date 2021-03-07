@@ -42,6 +42,9 @@ class ChapterController extends Controller
     {
         $message = '';
         try {
+            if($request->book_id) {
+                $previousChap = $this->chapter->where('book_id', $request->book_id)->latest()->first();
+            }
             $dataInsert = [
                 'name' => $request->chapter_name,
                 'url_key' => $request->url_key,
@@ -49,6 +52,9 @@ class ChapterController extends Controller
                 'translator_id' => $request->translator_id,
                 'content'=> $request->content_chapter
             ];
+            if(isset($previousChap)) {
+                $dataInsert['previous_id'] = $previousChap->id;
+            }
             $this->chapter->create($dataInsert);
             $message = 'Create chapter success.';
         } catch (\Exception $e) {
@@ -89,17 +95,19 @@ class ChapterController extends Controller
         return redirect()->route('admin.chapter.index')->with('message', $message);
     }
 
-    public function delete($id)
+    public function delete($id, Chapter $chapter)
     {
         if ($id) {
             try {
-                $chapter = $this->chapter->find($id);
-                $chapter->delete();
-                $message = 'Delete chapter success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $chapter)) {
+                    $chapter = $this->chapter->find($id);
+                    $chapter->delete();
+                    $message = 'Delete chapter success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([

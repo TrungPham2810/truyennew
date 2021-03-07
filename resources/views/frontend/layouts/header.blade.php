@@ -10,11 +10,9 @@
                 <div class="story-menu-item cat">
                     <i class="far fa-file"></i><span>Danh sách</span><i class="fas fa-angle-down"></i>
                     <ul class="sub-menu sub-menu-cat">
-                        <li><a href="#" title="Truyện Teen Hay">Truyện Category Truyệnxxxxxxxxxxxxxxxxxxx</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
+                        @foreach($categoryList as $category)
+                            <li class="col-xs-4"><a href="{{route('categories.show', ['key'=>$category->url_key])}}" title="{{$category->name}}">{{$category->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div class="story-menu-item list">
@@ -22,11 +20,9 @@
                     <span>Thể loại</span>
                     <i class="fas fa-angle-down"></i>
                     <ul class="sub-menu sub-menu-list">
-                        <li><a href="#" title="Truyện Teen Hay">Truyện List Truyệnxxxxxxxxxxxxxxxxx</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                        <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
+                        @foreach($tagList as $tag)
+                            <li class="col-xs-4"><a href="{{route('tag.show', ['key'=>$tag->url_key])}}" title="{{$tag->name}}">{{$tag->name}}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -44,22 +40,18 @@
                     <div class="story-menu-item cat">
                         <i class="far fa-file"></i><span>Danh sách</span>
                         <ul class="sub-menu sub-menu-cat">
-                            <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện Category</a></li>
+                            @foreach($categoryList as $category)
+                                <li><a href="{{route('categories.show', ['key'=>$category->url_key])}}" title="{{$category->name}}">{{$category->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="story-menu-item list">
                         <i class="fas fa-atlas"></i>
                         <span>Thể loại</span>
                         <ul class="sub-menu sub-menu-list">
-                            <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
-                            <li><a href="#" title="Truyện Teen Hay">Truyện List</a></li>
+                            @foreach($tagList as $tag)
+                                <li><a href="{{route('tag.show', ['key'=>$tag->url_key])}}" title="{{$tag->name}}">{{$tag->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

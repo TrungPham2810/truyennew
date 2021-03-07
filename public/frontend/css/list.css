@@ -107,6 +107,7 @@ ul.menu.breadcrumb {
 
 .type_list td.chap {
     vertical-align: initial;
+    text-align: right;
 }
 
 .type_list td.chap a{
@@ -159,6 +160,9 @@ h3.rv-home-a-title a:hover {
 }
 tbody {
     width: 100%;
+}
+.type_list td.image {
+    width: 25%;
 }
 img.image-book {
     width: 100%;

@@ -42,7 +42,11 @@
                                     {!! $htmlSelect !!}
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Miêu Tả</label>
+                                <textarea rows="8" name="description" class="form-control tinymce_editor_int ">{{$category->description}}</textarea>
 
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

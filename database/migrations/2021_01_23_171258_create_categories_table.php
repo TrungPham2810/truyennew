@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->string('url_key')->nullable(false)->unique();
             $table->integer('parent_id')->default(0);
+            $table->text('description')->nullable(true);
             $table->smallInteger('status')->default(1);
             $table->timestamps();
         });

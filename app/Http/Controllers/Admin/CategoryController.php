@@ -6,6 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CategoryAddRequest;
 use App\Http\Requests\Admin\CategoryUpdateRequest;
+use App\User;
 use Illuminate\Http\Request;
 use App\Components\Recusive;
 
@@ -41,7 +42,8 @@ class CategoryController extends Controller
             $dataInsert = [
                 'name' => $request->category_name,
                 'url_key' => $request->url_key,
-                'parent_id' => $request->parent_id
+                'parent_id' => $request->parent_id,
+                'description' => $request->description
             ];
             if (isset($request->status)) {
                 $dataInsert['status'] = 1;
@@ -57,7 +59,7 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index')->with('message', $message);
     }
 
-    public function edit($id)
+    public function edit($id, User $user)
     {
         $category = $this->category->find($id);
         $htmlSelect = $this->handleCategorySelect(0, $category->parent_id);
@@ -70,7 +72,8 @@ class CategoryController extends Controller
             $dataUpdate = [
                 'name' => $request->category_name,
                 'url_key' => $request->url_key,
-                'parent_id' => $request->parent_id
+                'parent_id' => $request->parent_id,
+                'description' => $request->description
             ];
             if (isset($request->status)) {
                 $dataUpdate['status'] = 1;
@@ -92,24 +95,26 @@ class CategoryController extends Controller
         return $htmlSelect;
     }
 
-    public function delete($id)
+    public function delete($id, Category $category)
     {
         if ($id) {
             try {
-                $category = $this->category->find($id);
-                $category->delete();
-                $message = 'Delete category success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $category)) {
+                    $category = $this->category->find($id);
+                    $category->delete();
+                    $message = 'Delete category success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([
                     'code' => 500,
                     'message' => $message
                 ]);
-            }
+            }//end try
         } else {
             $message = 'Can\'t found item to delete.';
             return response()->json([

@@ -35,6 +35,7 @@ class TagController extends Controller
             $dataInsert = [
                 'name' => $request->tag_name,
                 'url_key' => $request->url_key,
+                'description' => $request->description,
             ];
             $this->tag->create($dataInsert);
             $message = 'Create tag success.';
@@ -57,6 +58,7 @@ class TagController extends Controller
             $dataUpdate = [
                 'name' => $request->tag_name,
                 'url_key' => $request->url_key,
+                'description' => $request->description
             ];
             $this->tag->find($id)->update($dataUpdate);
             $message = 'Update Tag success.';
@@ -67,17 +69,19 @@ class TagController extends Controller
         return redirect()->route('admin.tags.index')->with('message', $message);
     }
 
-    public function delete($id)
+    public function delete($id, Tag $tag)
     {
         if ($id) {
             try {
-                $tag = $this->tag->find($id);
-                $tag->delete();
-                $message = 'Delete tag success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $tag)) {
+                    $tag = $this->tag->find($id);
+                    $tag->delete();
+                    $message = 'Delete tag success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([

@@ -1,0 +1,75 @@
+.rv-full-story-title {
+    color: #007f61;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.rv-chapt-title {
+    text-align: center;
+}
+.rv-chapt-title a {
+    color: #888;
+    font-size: 16px;
+    line-height: 1.3;
+    font-weight: 500;
+}
+
+span.sst-icon-list {
+    position: relative;
+    background-color: #f9b349;
+    display: inline-block;
+    border-radius: 4px;
+    vertical-align: middle;
+    font-weight: 400;
+    margin: 0 2px;
+    font-size: 19px;
+    line-height: 32px;
+    min-width: 63px;
+    text-align: center;
+    height: 32px;
+    opacity: .5;
+    transition: all .5s;
+}
+.sst-icon-list.span_list_chapter {
+    opacity: 1;
+}
+
+select.list_chapter {
+    display: block;
+    height: 32px;
+    background: #f9b349;
+}
+
+li.pre, li.next{
+
+}
+li.pre:hover, li.next:hover, span.sst-icon-list:hover {
+    opacity: 1;
+}
+li.next a, li.pre a {
+    color: #ffffff;
+    position: relative;
+    background-color: #f9b349;
+    opacity: .5;
+    transition: all .5s;
+    line-height: 32px;
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    vertical-align: middle;
+}
+
+.pagination_chapter {
+    text-align: center;
+}
+
+.pagination_chapter ul li {
+    display: inline-block;
+}

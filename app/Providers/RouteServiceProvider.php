@@ -74,7 +74,13 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapFrontendRoutes()
     {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/frontend/category.php'));
 
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/frontend/tag.php'));
     }
 
     /**

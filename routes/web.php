@@ -28,6 +28,29 @@ Route::get('/the-loai/{type}', [
         'uses' =>'CategoryController@show'
     ]
 );
-Route::get('/test', function () {
-    return view('test');
-})->name('test');
+//Route::get('/test', function () {
+//    return view('test');
+//})->name('test');
+Route::get('/test', [
+        'as'=> 'test',
+        'uses' =>'TestController@index',
+    ]
+);
+
+Route::get('/book/{bookUrlKey}/{chapterUrlkey}', [
+        'as'=> 'frontend.chapter',
+        'uses' =>'Frontend\ChapterController@show',
+    ]
+);
+
+Route::get('/book/{urlKey}', [
+        'as'=> 'frontend.book',
+        'uses' =>'Frontend\BookController@show',
+    ]
+);
+
+Route::get('/showlistchapter', [
+        'as'=> 'frontend.listchapter',
+        'uses' =>'Frontend\BookController@getListChapter',
+    ]
+);

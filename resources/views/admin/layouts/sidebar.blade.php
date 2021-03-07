@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title">
+            <a href="{{url('/admin')}}" class="site_title">
                 <img class="logo main_logo" src="{{asset('images/logo.png')}}" alt="">
                 <img class="icon_logo" src="{{asset('images/logo_icon.png')}}" alt="">
             </a>

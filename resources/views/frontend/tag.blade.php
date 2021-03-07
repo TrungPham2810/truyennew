@@ -1,6 +1,6 @@
 @extends('frontend.layouts.main')
 @section('title')
-    <title>{{$category->name}}</title>
+    <title>{{$tag->name}}</title>
 @endsection
 @section('css')
     <link href="{{asset('frontend/css/custom.css')}}" rel="stylesheet">
@@ -16,7 +16,7 @@
                     <ul class="menu breadcrumb">
                         <li><a href="/" title="truyen"><i class="fas fa-home"></i><span>Truyện</span></a></li>
                         <li class="active">
-                            <span class="label_book">{{$category->name}}</span>
+                            <span class="label_book">{{$tag->name}}</span>
                         </li>
                     </ul>
                 </div>
@@ -28,26 +28,23 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="search-advance">
-                        <form action="{{route('categories.filter')}}" method="POST" id="search-form">
+                        <form action="" method="POST" id="search-form">
                             @csrf
                             <div class="select-filter">
                                 <div>
-                                    <select name="type" id="ct">
+                                    <select name="ct" id="ct">
                                         <option value="">Tất cả</option>
                                         @foreach($categoryList as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
-                                        {{--<option value="A1">Tiên Hiệp</option>--}}
-                                        {{--<option value="A2" selected="">Kiếm Hiệp</option>--}}
-                                        {{--<option value="A3">Ngôn Tình</option>--}}
                                     </select>
 
                                 </div>
                                 <div>
                                     <select name="order" id="filter">
                                         <option value="0">Xếp Theo</option>
-                                        <option value="update">Truyện Mới Update</option>
-                                        <option value="new">Truyện Mới</option>
+                                        <option value="0">Truyện Mới Update</option>
+                                        <option value="8">Truyện Mới</option>
                                     </select>
                                 </div>
                                 <div>
@@ -101,7 +98,7 @@
 
                     <div class="row">
                         <div class="col-xs-6">
-                            <a href="#" class="title_hot"><span>{{$category->name}}</span><i class="fas fa-angle-right"></i></a>
+                            <a href="#" class="title_hot"><span>{{$tag->name}}</span><i class="fas fa-angle-right"></i></a>
                         </div>
                         <div class="col-xs-6">
                             <div class="switch-layout">
@@ -114,7 +111,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="description-category">
-                                <p>{{$category->description}}</p>
+                                <p>{{$tag->description}}</p>
                             </div>
                         </div>
                     </div>

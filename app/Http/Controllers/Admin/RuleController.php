@@ -58,17 +58,19 @@ class RuleController extends Controller
         return redirect()->route('admin.rule.index');
     }
 
-    public function delete($id)
+    public function delete($id, AuthorizationRule $rule)
     {
         if ($id) {
             try {
-                $rule = $this->rule->find($id);
-                $rule->delete();
-                $message = 'Delete rule success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $rule)) {
+                    $rule = $this->rule->find($id);
+                    $rule->delete();
+                    $message = 'Delete rule success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([

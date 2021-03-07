@@ -26,4 +26,25 @@ class Book extends Model
     {
         return $this->hasMany(Chapter::class, 'book_id');
     }
+
+    public function lastestChapter()
+    {
+        $lastestChapter = $this->chapter()->orderByDesc('id')->first();
+        return $lastestChapter;
+    }
+
+    public function getFullUrl($id = null)
+    {
+        if($id) {
+            $book = $this->find($id);
+            if($book) {
+                return  route('frontend.book', ['urlKey'=>$book->url_key]);
+            }
+        } else {
+            if($this->id) {
+                return  route('frontend.book', ['urlKey'=>$this->url_key]);
+            }
+        }
+        return null;
+    }
 }

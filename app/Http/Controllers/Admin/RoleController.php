@@ -105,17 +105,19 @@ class RoleController extends Controller
     }
 
 
-    public function delete($id)
+    public function delete($id, AuthorizationRole $role)
     {
         if ($id) {
             try {
-                $role = $this->role->find($id);
-                $role->delete();
-                $message = 'Delete rule success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $role)) {
+                    $role = $this->role->find($id);
+                    $role->delete();
+                    $message = 'Delete rule success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([

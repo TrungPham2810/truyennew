@@ -45,7 +45,7 @@ class BookController extends Controller
 
     public function index()
     {
-        $data = $this->book->latest()->paginate(10);
+        $data = $this->book->latest()->paginate(20);
         return view('admin.book.list', compact('data'));
     }
 
@@ -108,6 +108,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = $this->book->find($id);
+        $xx = $book->lastestChapter();
         $tags = $this->tag->all();
         $currentTags = [];
         foreach ($book->tags as $item) {
@@ -154,17 +155,19 @@ class BookController extends Controller
     }
 
 
-    public function delete($id)
+    public function delete($id, Book $book)
     {
         if ($id) {
             try {
-                $book = $this->book->find($id);
-                $book->delete();
-                $message = 'Delete book success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $book)) {
+                    $book = $this->book->find($id);
+                    $book->delete();
+                    $message = 'Delete book success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([

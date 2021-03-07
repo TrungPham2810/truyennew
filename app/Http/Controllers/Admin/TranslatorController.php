@@ -67,17 +67,19 @@ class TranslatorController extends Controller
         return redirect()->route('admin.translator.index')->with('message', $message);
     }
 
-    public function delete($id)
+    public function delete($id, Translator $translator)
     {
         if ($id) {
             try {
-                $translator = $this->translator->find($id);
-                $translator->delete();
-                $message = 'Delete translator success.';
-                return response()->json([
-                    'code' => 200,
-                    'message' => $message
-                ], 200);
+                if( $this->authorize('delete', $translator)) {
+                    $translator = $this->translator->find($id);
+                    $translator->delete();
+                    $message = 'Delete translator success.';
+                    return response()->json([
+                        'code' => 200,
+                        'message' => $message
+                    ], 200);
+                }
             } catch (\Exception $e) {
                 $message = 'Error: ' . $e->getMessage();
                 return response()->json([
