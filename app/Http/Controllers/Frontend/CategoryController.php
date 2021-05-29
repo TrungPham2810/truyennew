@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     protected $category;
     protected $book;
-    const FILTER_PARAM = ['type', 'order', 'greater', 'lesser'];
+    const FILTER_PARAM = ['type', 'order', 'greater', 'lesser', 'full', 'hot'];
     public function __construct(
         Category $category,
         Book $book
@@ -57,7 +57,7 @@ class CategoryController extends Controller
     public function showFilter(Request $request)
     {
         foreach (self::FILTER_PARAM as $param) {
-            if($request->has($param)) {
+            if ($request->has($param)) {
                 $params[$param] = $request->$param;
             }
         }
@@ -73,7 +73,17 @@ class CategoryController extends Controller
         if (isset($params['type']) && $params['type']) {
             $listBook->where('category_id', '=',$params['type']);
         }
-        $list = $listBook->get();
-        dd($list);
+        $collection = $listBook->get();
+        $bookIds = [];
+        foreach ($collection as $book) {
+            $bookIds[] = $book->id;
+        }
+        $books = $this->book->whereIn('id', $bookIds)->latest()->paginate(100);
+        if(isset($params['type'])) {
+            $category = $this->category->find($params['type']);
+        } else {
+            $category = $this->category->find(1);
+        }
+        return view('frontend.category', compact('category', 'books', 'params'));
     }
 }

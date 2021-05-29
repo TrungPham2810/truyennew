@@ -1,6 +1,8 @@
 <section class="story_finish">
     <div class="container">
         <div class="row row-title">
+
+
             <div class="col-md-12">
                 <div class="row part_title">
                     <div class="col-xs-6">
@@ -21,109 +23,24 @@
 
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-sm-6 col-md-4  col-lg-3 book-finished full">
-                        <a href="/mua-xuan-den-muon/" class="image_book_finished">
-                            <img class="image-book ls-is-cached lazyloaded"
-                                 data-src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"
-                                 alt="Mùa Xuân Đến Muộn"
-                                 src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"></a>
-                        <div class="info">
-                            <div class="chap">62 Chương</div>
-                            <a href="/mua-xuan-den-muon/" title="Mùa Xuân Đến Muộn">
-                                <h3>
-                                    <div class="name-book">Mùa Xuân Đến Muộn</div>
-                                </h3>
-                            </a>
-                            <div class="rate">7.9/10</div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4  col-lg-3 book-finished full">
-                        <a href="/mua-xuan-den-muon/" class="image_book_finished">
-                            <img class="image-book ls-is-cached lazyloaded"
-                                 data-src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"
-                                 alt="Mùa Xuân Đến Muộn"
-                                 src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"></a>
-                        <div class="info">
-                            <div class="chap">62 Chương</div>
-                            <a href="/mua-xuan-den-muon/" title="Mùa Xuân Đến Muộn">
-                                <h3>
-                                    <div class="name-book">Mùa Xuân Đến Muộn</div>
-                                </h3>
-                            </a>
-                            <div class="rate">7.9/10</div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4  col-lg-3 book-finished full">
-                        <a href="/mua-xuan-den-muon/" class="image_book_finished">
-                            <img class="image-book ls-is-cached lazyloaded"
-                                 data-src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"
-                                 alt="Mùa Xuân Đến Muộn"
-                                 src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"></a>
-                        <div class="info">
-                            <div class="chap">62 Chương</div>
-                            <a href="/mua-xuan-den-muon/" title="Mùa Xuân Đến Muộn">
-                                <h3>
-                                    <div class="name-book">Mùa Xuân Đến Muộn</div>
-                                </h3>
-                            </a>
-                            <div class="rate">7.9/10</div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4  col-lg-3 book-finished full">
-                        <a href="/mua-xuan-den-muon/" class="image_book_finished">
-                            <img class="image-book ls-is-cached lazyloaded"
-                                 data-src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"
-                                 alt="Mùa Xuân Đến Muộn"
-                                 src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"></a>
-                        <div class="info">
-                            <div class="chap">62 Chương</div>
-                            <a href="/mua-xuan-den-muon/" title="Mùa Xuân Đến Muộn">
-                                <h3>
-                                    <div class="name-book">Mùa Xuân Đến Muộn</div>
-                                </h3>
-                            </a>
-                            <div class="rate">7.9/10</div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-6 col-md-4  col-lg-3 book-finished full">
-                        <a href="/mua-xuan-den-muon/" class="image_book_finished">
-                            <img class="image-book ls-is-cached lazyloaded"
-                                 data-src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"
-                                 alt="Mùa Xuân Đến Muộn"
-                                 src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"></a>
-                        <div class="info">
-                            <div class="chap">62 Chương</div>
-                            <a href="/mua-xuan-den-muon/" title="Mùa Xuân Đến Muộn">
-                                <h3>
-                                    <div class="name-book">Mùa Xuân Đến Muộn</div>
-                                </h3>
-                            </a>
-                            <div class="rate">7.9/10</div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 col-lg-3 book-finished full">
-                        <a href="/mua-xuan-den-muon/" class="image_book_finished">
-                            <img class="image-book ls-is-cached lazyloaded"
-                                 data-src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"
-                                 alt="Mùa Xuân Đến Muộn"
-                                 src="https://sstruyen.com/assets/img/story//mua-xuan-den-muon.1596994775.jpg"></a>
-                        <div class="info">
-                            <div class="chap">62 Chương</div>
-                            <a href="/mua-xuan-den-muon/" title="Mùa Xuân Đến Muộn">
-                                <h3>
-                                    <div class="name-book">Mùa Xuân Đến Muộn Mùa Xuân Đến Muộn</div>
-                                </h3>
-                            </a>
-                            <div class="rate">7.9/10</div>
-                        </div>
-                    </div>
-
+                    @if(isset($categoryLayout2))
+                        @foreach($categoryLayout2->books()->limit(8)->get() as $book)
+                            <div class="col-sm-6 col-md-4  col-lg-3 book-finished full">
+                                <a href="{{$book->getFullUrl()}}" class="image_book_finished">
+                                    <img class="image-book ls-is-cached lazyloaded" src="{{asset($book->image_path)}}" alt="{{$book->name}}">
+                                </a>
+                                <div class="info">
+                                    <div class="chap">{{$book->countChapter()}} Chương</div>
+                                    <a href="{{$book->getFullUrl()}}" title="{{$book->name}}">
+                                        <h3>
+                                            <div class="name-book">{{$book->name}}</div>
+                                        </h3>
+                                    </a>
+                                    <div class="rate">7.9/10</div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
 

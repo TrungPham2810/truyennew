@@ -32,6 +32,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $categoryLayout1 = $this->tag->find(1);
+        $categoryLayout2 = $this->tag->find(2);
+        return view('welcome', compact('categoryLayout1', 'categoryLayout2'));
     }
 }

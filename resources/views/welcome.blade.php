@@ -7,9 +7,9 @@
 @endsection
 
 @section('content')
-    @include('frontend.layouts.hotstory'))
-    @include('frontend.layouts.newstory'))
-    @include('frontend.layouts.storyfinish'))
+    @include('frontend.layouts.hotstory')
+    @include('frontend.layouts.newstory')
+    @include('frontend.layouts.storyfinish')
 @endsection
 
 @section('js')

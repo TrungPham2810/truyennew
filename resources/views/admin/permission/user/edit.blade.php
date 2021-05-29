@@ -38,7 +38,10 @@
                                 <label for="exampleInputEmail1">Password</label>
                                 <input type="password" id="password" class="form-control" name="password" placeholder="Password">
                             </div>
-
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Image</label>
+                                <input type="file" class="form-control-file" name="user_image" id="user_image">
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">New Password</label>
                                 <input type="password" id="new_password" class="form-control" name="new_password" placeholder="Password">

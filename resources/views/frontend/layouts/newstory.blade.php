@@ -10,14 +10,9 @@
                     </div>
                     <div class="list_type">
                         <ul>
-                            <li><a href="/the-loai/tien-hiep/" title="Tiên Hiệp">Tiên Hiệp</a></li>
-                            <li><a href="/the-loai/kiem-hiep/" title="Kiếm Hiệp">Kiếm Hiệp</a></li>
-                        </ul>
-                        <ul>
-                            <li><a href="/the-loai/truyen-sung/" title="Truyện Sủng">Truyện Sủng</a></li>
-                            <li><a href="/the-loai/cung-dau/" title="Truyện Cung Đấu">Truyện Cung Đấu</a></li>
-                            <li><a href="/the-loai/truyen-nu-cuong/" title="Truyện Nữ Cường">Truyện Nữ Cường</a></li>
-                            <li><a href="/the-loai/truyen-gia-dau/" title="Truyện Gia Đấu">Truyện Gia Đấu</a></li>
+                            @foreach($categoryList as $category)
+                                <li class="col-xs-6"><a href="{{route('categories.show', ['key'=>$category->url_key])}}" title="{{$category->name}}">{{$category->name}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
 

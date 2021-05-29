@@ -20,128 +20,22 @@
 
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-                    <div class="col-md-2 col-xs-4 item_hot_story">
-                        <div class="label_story">FULL</div>
-                        <a href="#" class="image_story">
-                            <img src="{{asset('images/test_image_story.png')}}" alt="">
-                        </a>
-                        <a href="#">
-                            <div class="name-book">Dau pha thuong khung</div>
-                        </a>
-                        <div class="rate">7.9/10</div>
-                    </div>
-
+                    @if(isset($categoryLayout1))
+                        @foreach($categoryLayout1->books()->limit(12)->get() as $book)
+                            <div class="col-md-2 col-xs-4 item_hot_story">
+                                @if($book->isFullBook())
+                                    <div class="label_story">Full</div>
+                                @endif
+                                <a href="{{$book->getFullUrl()}}" class="image_story">
+                                    <img class="" src="{{asset($book->image_path)}}" alt="{{$book->name}}">
+                                </a>
+                                <a href="{{$book->getFullUrl()}}">
+                                    <div class="name-book">{{$book->name}}</div>
+                                </a>
+                                <div class="rate">7.9/10</div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
 

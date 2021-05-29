@@ -44,7 +44,10 @@
                                 <label for="exampleInputEmail1">Confirm Password</label>
                                 <input type="password" id="confirm_password" class="form-control" required name="password" placeholder="Confirm Password">
                             </div>
-
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Image</label>
+                                <input type="file" class="form-control-file" name="user_image" id="user_image">
+                            </div>
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">User Role</label>
                                 <select class="form-control roles_select" id="roles" name="role">

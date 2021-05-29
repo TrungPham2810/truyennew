@@ -47,4 +47,31 @@ class Book extends Model
         }
         return null;
     }
+
+    public function countChapter($id = null)
+    {
+        if($id) {
+            return Chapter::where('book_id', $id)->count();
+        } else {
+            if($id = $this->id) {
+                return Chapter::where('book_id', $id)->count();
+            }
+        }
+        return null;
+    }
+
+    public function isFullBook($id = null)
+    {
+        if($id) {
+            $book = $this->find($id);
+            if($book) {
+                return $book->tags->contains('id', 2);
+            }
+        } else {
+            if($this->id) {
+                return $this->tags->contains('id', 2);
+            }
+        }
+        return false;
+    }
 }

@@ -102,5 +102,5 @@
 
     <script src="{{asset('vendors/select2/select2.min.js')}}"></script>
     <script src="{{asset('admins/assets/product/add/add.js')}}"></script>
-    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 @endsection

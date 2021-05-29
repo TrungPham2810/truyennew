@@ -35,11 +35,12 @@
                                     <select name="type" id="ct">
                                         <option value="">Tất cả</option>
                                         @foreach($categoryList as $item)
-                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @if(isset($params['type']) && $params['type'] == $item->id)
+                                                <option value="{{$item->id}}" selected>{{$item->name}}</option>
+                                            @else
+                                                <option value="{{$item->id}}">{{$item->name}}</option>
+                                            @endif
                                         @endforeach
-                                        {{--<option value="A1">Tiên Hiệp</option>--}}
-                                        {{--<option value="A2" selected="">Kiếm Hiệp</option>--}}
-                                        {{--<option value="A3">Ngôn Tình</option>--}}
                                     </select>
 
                                 </div>
@@ -51,37 +52,27 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <select name="greater" id="so-chuong">
-                                        <option value="0">Số Chương &gt; 0</option>
-                                        <option value="10">Số Chương &gt; 10</option>
-                                        <option value="20">Số Chương &gt; 20</option>
-                                        <option value="50">Số Chương &gt; 50</option>
-                                        <option value="100">Số Chương &gt; 100</option>
-                                        <option value="200">Số Chương &gt; 200</option>
-                                        <option value="500">Số Chương &gt; 500</option>
-                                        <option value="1000">Số Chương &gt; 1000</option>
-                                    </select>
+                                    @if(isset($params))
+                                        {!! getSelectGreater(optional($params)) !!}
+                                    @else
+                                        {!! getSelectGreater(optional()) !!}
+                                    @endif
                                 </div>
                                 <div>
-                                    <select name="lesser" id="so-chuong-2">
-                                        <option value="1000000000">Số Chương &lt; 1 Tỷ</option>
-                                        <option value="10">Số Chương &lt; 10</option>
-                                        <option value="20">Số Chương &lt; 20</option>
-                                        <option value="50">Số Chương &lt; 50</option>
-                                        <option value="100">Số Chương &lt; 100</option>
-                                        <option value="200">Số Chương &lt; 200</option>
-                                        <option value="500">Số Chương &lt; 500</option>
-                                        <option value="1000">Số Chương &lt; 1000</option>
-                                    </select>
+                                    @if(isset($params))
+                                        {!! getSelectLesser(optional($params)) !!}
+                                    @else
+                                        {!! getSelectLesser(optional()) !!}
+                                    @endif
                                 </div>
                             </div>
                             <div class="search-check">
                                 <div class="check">
-                                    <input type="checkbox" name="full" value="full"/>
+                                    <input type="checkbox" name="full" value="full" {{(isset($params['full']))?'checked':''}}/>
                                     <span class="rv-sr-a">Truyện full</span>
                                 </div>
                                 <div class="check">
-                                    <input type="checkbox" name="hot" value="hot"/>
+                                    <input type="checkbox" name="hot" value="hot" {{(isset($params['hot']))?'checked':''}}/>
                                     <span class="rv-sr-a">Truyện hot</span>
                                 </div>
                             </div>
